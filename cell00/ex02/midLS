@@ -1,1 +1,1 @@
-printf "%s," $(ls -1 | grep -v '^\.') | sed 's/,$//'
+ls -1 | grep -v '^\.' | paste -sd, -
