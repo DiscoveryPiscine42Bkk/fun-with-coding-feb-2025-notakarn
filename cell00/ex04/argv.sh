@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [ $# -gt 3 ]; then
-    echo "You need to provide no more than 3 arguments."
+    echo "max 3 arguments"
     exit 1
 fi
 
