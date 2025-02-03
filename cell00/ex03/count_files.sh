@@ -7,4 +7,4 @@ total_count=$(find . -maxdepth 1 -type f -o -type d | wc -l)
 total_count=$((total_count - 1))
 
 # Display the current total count
-echo "Total number of files and directories: $total_count"
+echo "$total_count"
