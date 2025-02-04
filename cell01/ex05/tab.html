@@ -6,14 +6,18 @@
     <title>Document</title>
 </head>
 <body>
-    <table border="1">
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 2px solid black;
+        }
+    </style>
+    <table border="2" style="width: 1500px; height: 20vh;">
         <tr>
-            <td>Row 1, Cell 1</td>
-            <td>Row 1, Cell 2</td>
-        </tr>
-        <tr>
-            <td>Row 2, Cell 1</td>
-            <td>Row 2, Cell 2</td>
+            <td style="font-size: 5vh; background-color: rgb(184, 219, 100);">first</td>
+            <td style="font-size: 5vh; background-color: rgb(255, 84, 84);">second</td>
         </tr>
     </table>
 </body>
