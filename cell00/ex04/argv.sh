@@ -5,6 +5,11 @@ if [ $# -gt 3 ]; then
     exit 1
 fi
 
+if [ $# -lt 1 ]; then
+    echo "No arguments supplied"
+    exit 1
+fi
+
 if [ $# -ge 1 ]; then
     echo "$1"
 fi
