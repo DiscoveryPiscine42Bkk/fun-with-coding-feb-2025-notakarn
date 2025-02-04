@@ -1,0 +1,37 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+.parallax {
+    height: 100vh;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.first {
+    background-image: url('https://i.imgur.com/GXrUjc6.png');
+}
+
+.second {
+    background-image: url('https://i.imgur.com/LzjF4pN.png');
+}
+
+.content {
+    height: 10vh;
+    background-color: rgb(0, 0, 0);
+   
+}
+h1 {
+    color: white;
+    font-size: 2em;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
