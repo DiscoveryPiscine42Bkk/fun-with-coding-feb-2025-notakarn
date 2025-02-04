@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [ $# -le 0 ]; then
-    echo "no argument"
+    echo "No arguments supplied"
 fi
 
 for arg in "$@"; do
