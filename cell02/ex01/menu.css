@@ -1,0 +1,45 @@
+.menu {
+    width: 40vh;
+    height: auto;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center;
+    position: relative; /* Add this */
+}
+
+.menu_static {
+    text-align: center;
+    background-color: rgb(255, 98, 98);
+    font-size: 5vh; 
+    padding: 10px;
+    width: 100%;
+}
+
+.menu_static:hover {
+    background-color: rgb(255, 0, 0);
+    cursor: pointer;
+}
+
+.menu_drop {
+     display: none; /*hide class menu_drop */
+    position: absolute;
+    top: 100%; 
+    left: 0;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.menu_static:hover + .menu_drop,.menu_drop:hover {
+    display: block; /*show class menu_drop on hover*/
+}
+
+.menu_drop a {
+    color: black;
+    display: block;
+    text-align: left;
+}
+
