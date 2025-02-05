@@ -4,30 +4,31 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-color: #f8f8ff; 
+    background-color: #ebebeb; 
 }
 
 select {
     width: 200px;
     padding: 10px;
     font-size: 16px;
-    border: 2px solid #6a5acd; 
+    border: 2px solid #ffffff; 
     border-radius: 8px;
     background-color: #ffffff; 
-    color: #333;
+    color: #000000;
     outline: none;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.2s ease;
     align-items: center; 
 }
 
 select:hover {
-    background-color: #e6e6fa;
+    background-color: #e6e6e6;
 }
 
 select:focus {
-    border-color: #483d8b; 
-    background-color: #ddd;
+    border-color: #ffffff; 
+    background-color: #414141;
+    color: #ffffff;
 }
 
 option {
