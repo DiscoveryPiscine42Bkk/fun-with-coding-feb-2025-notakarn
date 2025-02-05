@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cell03 Ex01</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+        #balloon {
+            display: inline-block;
+            height: 200px;
+            width: 200px;
+            background-color: red;
+            border-radius: 100%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="balloon" onclick="pumpAir()" onmouseleave="Airout()">  
+    </div>
+
+    <script>
+        let pump_count = 0;
+
+        function pumpAir() {
+            pump_count++; 
+            
+            let balloon = document.getElementById("balloon");
+            let currentHeight = parseInt(window.getComputedStyle(balloon).height);
+            let currentWidth = parseInt(window.getComputedStyle(balloon).width);
+
+            let newHeight = currentHeight + 10;
+            let newWidth = currentWidth + 10;
+
+            if (newHeight > 420) {
+                balloon.style.height = "200px";
+                balloon.style.width = "200px";
+                pump_count = 0; 
+            } else {
+                balloon.style.height = newHeight + "px";
+                balloon.style.width = newWidth + "px";
+            }
+
+            if (pump_count === 1) { balloon.style.backgroundColor = "green"; }
+            if (pump_count === 2) { balloon.style.backgroundColor = "blue"; }
+            if (pump_count === 3) {
+                balloon.style.backgroundColor = "red";
+                pump_count = 0; 
+            }
+        }
+
+        function Airout() {
+            if (pump_count === 0) {
+                pump_count=3
+            }
+
+            pump_count--; 
+
+            let balloon = document.getElementById("balloon");
+            let currentHeight = parseInt(window.getComputedStyle(balloon).height);
+            let currentWidth = parseInt(window.getComputedStyle(balloon).width);
+
+            let newHeight = currentHeight - 5;
+            let newWidth = currentWidth - 5;
+
+            if (newHeight < 200) {
+                newHeight = 200;
+                newWidth = 200;
+            }
+
+            if (currentHeight != 200) {
+            if (pump_count === 2) { balloon.style.backgroundColor = "blue"; }
+            if (pump_count === 1) { balloon.style.backgroundColor = "green"; }
+            if (pump_count === 0) { balloon.style.backgroundColor = "red"; }
+            }
+
+            balloon.style.height = newHeight + "px";
+            balloon.style.width = newWidth + "px";    
+        }
+
+    </script>
+
+</body>
+</html>
