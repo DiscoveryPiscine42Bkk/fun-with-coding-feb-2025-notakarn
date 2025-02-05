@@ -35,6 +35,9 @@
         let pump_count = 0;
 
         function pumpAir() {
+            if (pump_count === 3) {
+                pump_count=0
+            }
             pump_count++; 
             
             let balloon = document.getElementById("balloon");
@@ -48,6 +51,7 @@
                 balloon.style.height = "200px";
                 balloon.style.width = "200px";
                 pump_count = 0; 
+                balloon.style.backgroundColor = "red"
             } else {
                 balloon.style.height = newHeight + "px";
                 balloon.style.width = newWidth + "px";
