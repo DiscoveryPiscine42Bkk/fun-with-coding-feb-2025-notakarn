@@ -3,9 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>cell03 ex00</title>
+    <link rel="stylesheet" href="blackgroound.css">
 </head>
 <body>
-    <button>Click Me!</button>
+    <button id="colorButton" onclick="changeBackgroundColor()">Click Me!</button>
+    <script>
+        function changeBackgroundColor() {
+            let red = Math.floor(Math.random() * 256);
+            let green = Math.floor(Math.random() * 256);
+            let blue = Math.floor(Math.random() * 256);
+            document.body.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
+        }
+    </script>
 </body>
 </html>
