@@ -17,12 +17,13 @@ body {
 .profile_card {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: start;
     align-items: center; 
     width: 400px;
     height: 700px;
     background-color: #ffffff;
     box-shadow: 0 4vh 8vh rgba(0, 0, 0, 0.2);
+    overflow: hidden;
 }
 
 
@@ -34,33 +35,79 @@ body {
     color: rgb(102, 102, 102);
 }
 
+#picture {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
 table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 10px;
-    vertical-align: top;
+    margin-top: 0;
+    flex-grow: 1;
 }
 
 .data-cell {
     text-align: center;
-
+    vertical-align: top;
 }
 
-#picture {
-    width: 100%;
-    height: 100%;
-}
-#picture img {
-    width: 100%;
-    height: 60%;
-    object-fit: cover;
-}
 
+
+#empty{
+    height:15%
+}
+#name{
+    font-size: 30px;
+    height: 10%;
+}
+#desc1{
+    color: rgb(145, 145, 145);
+    font-size: 25px;
+    height: 13%
+}
 #contract {
+    vertical-align: middle;
     background: rgb(79, 79, 95);
     color: white;
     width: 100%;
-    display: inline-block;
+    height: 20%;
     cursor: pointer;
-    margin-top: 10px; /* Adds space above the button */
+    text-decoration: none;
 }
+
+#contract a {
+    color: white;
+    text-decoration: none;
+}
+
+#contract:hover {
+    background-color:rgb(156, 25, 25) ;
+    transition: background-color 0.3s ease;
+}
+
+#icon {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    gap: 30px; 
+    width: 100%;
+    height: 5%;
+    flex-wrap: wrap; 
+}
+
+#icon img {
+    width: 30px; 
+    height: 30px;
+    object-fit: contain; 
+}
+
