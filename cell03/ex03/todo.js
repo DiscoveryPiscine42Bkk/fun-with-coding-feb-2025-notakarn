@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
         todoItem.addEventListener("click", function () {
             if (confirm("Do you want to delete this task?")) {
                 ftList.removeChild(todoItem);
-                saveTasks();
+                saveTasks(); //save task function
             }
         });
 
