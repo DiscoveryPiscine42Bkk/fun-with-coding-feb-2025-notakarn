@@ -35,7 +35,7 @@ $(document).ready(function () {
     // save cookies
     function saveTasks() {
         let tasks = [];
-        $("#ft_list div").each(function () {
+        $("#dft_list iv").each(function () {
             tasks.push($(this).text());
         });
 
