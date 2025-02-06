@@ -34,7 +34,26 @@
             display: flex;
             justify-content: center;
         }
+
+        .image-container-left {
+            display: flex;
+            gap: 22px;
+            flex-wrap: wrap;
+            justify-content: left;
+        }
         .image-item img {
+            width: 80px; /* Image size */
+            height: 80px; /* Image size */
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        .image-item-left {
+            flex: 0 0 83px; /* Default size */
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: left;
+        }
+        .image-item-left img {
             width: 80px; /* Image size */
             height: 80px; /* Image size */
             border-radius: 8px;
@@ -300,12 +319,12 @@
         <h2>Contact</h2>
         <p>Email: somerandomformalemail@gmail.com </p>
         <div class="container mt-4">
-            <div class="image-container">
+            <div class="image-container-left">
 
-              <div class="image-item" style="width: 60px; height: 60px;">
+              <div class="image-item-left" style="width: 60px; height: 60px;">
                 <a href="https://github.com/notakarn"><img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub" style="width: 100%; height: 100%;"></a>
               </div>
-              <div class="image-item" style="width: 60px; height: 60px;">
+              <div class="image-item-left" style="width: 60px; height: 60px;">
                 <a href="https://www.linkedin.com/in/nontach-karnjanaves-029593258/"><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" style="width: 100%; height: 100%;"></a>
               </div>
               
