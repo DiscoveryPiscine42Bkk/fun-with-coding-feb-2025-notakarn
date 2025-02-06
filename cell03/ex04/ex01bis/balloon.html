@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cell03 Ex01</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+        #balloon {
+            display: inline-block;
+            height: 200px;
+            width: 200px;
+            background-color: red;
+            border-radius: 100%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="balloon"></div>
+
+    <script>
+        let pump_count = 0;
+
+        $(document).ready(function() {
+            $("#balloon").click(function() {
+                pumpAir();
+            });
+
+            $("#balloon").mouseleave(function() {
+                Airout();
+            });
+        });
+
+        function pumpAir() {
+            if (pump_count === 3) {
+                pump_count = 0;
+            }
+            pump_count++;
+
+            let $balloon = $("#balloon");
+            let currentHeight = $balloon.height();
+            let currentWidth = $balloon.width();
+
+            let newHeight = currentHeight + 10;
+            let newWidth = currentWidth + 10;
+
+            if (newHeight > 420) {
+                $balloon.css({"height": "200px", "width": "200px"});
+                pump_count = 0;
+                $balloon.css("background-color", "red");
+            } else {
+                $balloon.css({"height": newHeight + "px", "width": newWidth + "px"});
+            }
+
+            if (pump_count === 1) {
+                $balloon.css("background-color", "green");
+            }
+            if (pump_count === 2) {
+                $balloon.css("background-color", "blue");
+            }
+            if (pump_count === 3) {
+                $balloon.css("background-color", "red");
+                pump_count = 0;
+            }
+        }
+
+        function Airout() {
+            if (pump_count === 0) {
+                pump_count = 3;
+            }
+
+            pump_count--;
+
+            let $balloon = $("#balloon");
+            let currentHeight = $balloon.height();
+            let currentWidth = $balloon.width();
+
+            let newHeight = currentHeight - 5;
+            let newWidth = currentWidth - 5;
+
+            if (newHeight < 200) {
+                newHeight = 200;
+                newWidth = 200;
+            }
+
+            if (currentHeight != 200) {
+                if (pump_count === 2) {
+                    $balloon.css("background-color", "blue");
+                }
+                if (pump_count === 1) {
+                    $balloon.css("background-color", "green");
+                }
+                if (pump_count === 0) {
+                    $balloon.css("background-color", "red");
+                }
+            }
+
+            $balloon.css({"height": newHeight + "px", "width": newWidth + "px"});
+        }
+
+    </script>
+</body>
+</html>

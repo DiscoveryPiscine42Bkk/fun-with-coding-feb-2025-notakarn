@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cell03 ex00</title>
+    <link rel="stylesheet" href="background.css">
+    <!-- Include jQuery from CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <button id="colorButton">Click Me!</button>
+    <script>
+
+        $(document).ready(function() {
+            $("#colorButton").click(function() {
+                let red = Math.floor(Math.random() * 256);
+                let green = Math.floor(Math.random() * 256);
+                let blue = Math.floor(Math.random() * 256);
+                
+                $("body").css("background-color", `rgb(${red}, ${green}, ${blue})`);
+            });
+        });
+    </script>
+</body>
+</html>
