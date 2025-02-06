@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cell03 Ex03</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            flex-direction: column;
+        }
+        form {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <input type="text" id="input1" placeholder="Enter first number">
+        <select id="operation">
+            <option value="add">+</option>
+            <option value="subtract">-</option>
+            <option value="multiply">*</option>
+            <option value="divide">/</option>
+            <option value="mod">%</option>
+        </select>
+        <input type="text" id="input2" placeholder="Enter second number">
+        <br><br>
+        <button type="button" onclick="calculate()">Try me!</button>
+    </form>
+
+    <script>
+        function calculate() {
+            const input1 = parseFloat(document.getElementById('input1').value);
+            const input2 = parseFloat(document.getElementById('input2').value);
+            const operation = document.getElementById('operation').value;
+            let result;
+
+            if (isNaN(input1) || isNaN(input2) || input1 < 0 || input2 < 0) {
+                result = 'Error :(';
+            } else {
+                switch (operation) {
+                    case 'add':
+                        result = input1 + input2;
+                        break;
+                    case 'subtract':
+                        result = input1 - input2;
+                        break;
+                    case 'multiply':
+                        result = input1 * input2;
+                        break;
+                    case 'divide':
+                        if(input2 === 0){
+                            result = '"It’s over 9000!'
+                            break;
+                        }
+                        result = input1 / input2;
+                        break;
+                    case 'mod':
+                        if(input2 === 0){
+                            result = '"It’s over 9000!'
+                            break;
+                        }
+                        result = input1 % input2;
+                        break;
+                    default:
+                        result = 'Invalid operation';
+                }
+            }
+
+            alert(result);
+        }
+        function startTimer() {
+            setTimeout(() => {
+            alert('Please, use me...');
+            startTimer();
+            }, 30000);
+        }
+
+        startTimer();
+    </script>
+</body>
+</html>
