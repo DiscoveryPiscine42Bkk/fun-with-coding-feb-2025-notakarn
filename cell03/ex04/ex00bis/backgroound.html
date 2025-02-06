@@ -11,13 +11,13 @@
     <button id="colorButton">Click Me!</button>
     <script>
 
-        $(document).ready(function() {
+        $(document).ready(function() { 
             $("#colorButton").click(function() {
-                let red = Math.floor(Math.random() * 256);
+                let red = Math.floor(Math.random() * 256); //rand from 0-255
                 let green = Math.floor(Math.random() * 256);
                 let blue = Math.floor(Math.random() * 256);
                 
-                $("body").css("background-color", `rgb(${red}, ${green}, ${blue})`);
+                $("body").css("background-color", `rgb(${red}, ${green}, ${blue})`); //change bg color in css
             });
         });
     </script>
