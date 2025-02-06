@@ -21,7 +21,7 @@ $(document).ready(function () {
         todoItem.on("click", function () {
             if (confirm("Do you want to delete this task?")) {
                 todoItem.remove();
-                saveTasks(); // Save tasks after deletion
+                saveTasks(); // call function save cookies
             }
         });
 
@@ -32,7 +32,7 @@ $(document).ready(function () {
         }
     }
 
-    // Function to save tasks to cookies
+    // save cookies
     function saveTasks() {
         let tasks = [];
         $("#ft_list div").each(function () {
@@ -45,14 +45,14 @@ $(document).ready(function () {
         console.log("Tasks saved in cookie:", tasks);
     }
 
-    // Function to load tasks from cookies
+    // load cookies
     function loadTasks() {
         let cookie = document.cookie.split("; ").find(row => row.startsWith("todos="));
 
         if (cookie) {
             let cookieValue = cookie.split("=")[1];
 
-            try {
+            try {   // Handle error?
                 let tasks = JSON.parse(decodeURIComponent(cookieValue));
 
                 ftList.empty(); // Clear the current list
