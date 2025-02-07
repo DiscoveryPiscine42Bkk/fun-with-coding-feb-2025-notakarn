@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        body {
+            background-color: rgb(154, 154, 154);
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .image {
+            margin: 0 30px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            width: 500px;
+            height: auto;
+        }
+        .image:hover {
+            transform: scale(1.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+
+
+    </style>
+
+    <div class="container">
+        <a href="/cell04/port_1.html"><img id="cc" src="https://live.staticflickr.com/65535/54311843491_11b1c6ca51_k.jpg" alt="Image 1" class="image"></a>
+        <a href="/cell04/port_1.html"><img id="nk" src="https://live.staticflickr.com/65535/54312084343_9e2e0fa4de_k.jpg" alt="Image 2" class="image"></a>
+    </div>
+</body>
+
+<script>document.getElementById("cc").addEventListener("mouseover", function() {
+    document.body.style.transition = "background-color 1s ease";
+    document.body.style.backgroundColor = "#992244";
+});
+
+document.getElementById("cc").addEventListener("mouseout", function() {
+    document.body.style.backgroundColor = "";
+});
+
+document.getElementById("nk").addEventListener("mouseover", function() {
+    document.body.style.transition = "background-color 1s ease";
+    document.body.style.backgroundColor = "#1e5270";
+});
+
+document.getElementById("nk").addEventListener("mouseout", function() {
+    document.body.style.backgroundColor = "";
+});
+</script>
+</html>
