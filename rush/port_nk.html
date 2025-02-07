@@ -70,7 +70,44 @@
                 flex: 0 0 50px;
             }
         }   
+        @keyframes float {
+                0%, 100% {
+                    transform: translateY(10px);
+                }
+                50% {
+                    transform: translateY(-30px);
+                }
+            }
+        #profession {
+                opacity: 1;
+                transition: opacity 0.5s ease; 
+            }
+        #scrolling-container {
+                overflow: hidden;
+                white-space: nowrap;
+                position: relative;
+                width: 100%;
+        }
         
+        #scrolling-images {
+            display: flex;
+            animation: scroll 40s linear infinite;
+            width: max-content;
+        }
+        
+        #scrolling-images img {
+            height: 150px; /* Adjust as needed */
+            margin-right: 15px; /* Spacing */
+        }
+        
+        @keyframes scroll {
+            from {
+                transform: translateX(0%);
+            }
+            to {
+                transform: translateX(-50%);
+            }
+        }
     </style>
 </head>
 <body>
@@ -96,16 +133,7 @@
         <div class="position-absolute w-100 text-center" style="top: 55%; transform: translateY(-60%); z-index: 1; font-size: 100px;">
         <p class="text-white" style="animation: float 5s ease-in-out infinite;">Hi.</p>
 
-         <style> 
-            @keyframes float {
-                0%, 100% {
-                    transform: translateY(10px);
-                }
-                50% {
-                    transform: translateY(-30px);
-                }
-            }
-        </style>
+
         <div id = "name"></div>
         </div>
         
@@ -121,64 +149,9 @@
             <div class="py-4"></div>
             <h2>About Me</h2>
             <p>Hey, Thanks for reading this! I am <span id="profession"></span></p> <!--about me (changing profession)-->
-        
-            <style>
-                #profession {
-                    opacity: 1;
-                    transition: opacity 0.5s ease; 
-                }
-            </style>
-        
-            <script>
-                const professions = ["an Automation Engineer", "a Graphic Designer"];
-                let professionIndex = 0;
-                const professionElement = document.getElementById("profession");
-        
-                function swapProfession() {
-                    professionElement.style.opacity = 0;  // Start fade-out
-                    setTimeout(() => {
-                        professionElement.textContent = professions[professionIndex];  // Update the profession text
-                        professionElement.style.opacity = 1;  // Start fade-in
-                        professionIndex = (professionIndex + 1) % professions.length;  // Cycle through the array
-                    }, 500); // Duration of fade-out before the text changes
-                }
-        
-                setInterval(swapProfession, 3000); // Swap every 3 seconds
-        
-                // Initial profession setup
-                professionElement.textContent = professions[professionIndex];
-            </script>
 
             <p>I'm interest in multiple things (atleast I hope so..) Here are some of the things I do ↓</p>
 
-            <style>
-                #scrolling-container {
-                    overflow: hidden;
-                    white-space: nowrap;
-                    position: relative;
-                    width: 100%;
-                }
-              
-                #scrolling-images {
-                    display: flex;
-                    animation: scroll 40s linear infinite;
-                    width: max-content;
-                }
-              
-                #scrolling-images img {
-                    height: 150px; /* Adjust as needed */
-                    margin-right: 15px; /* Spacing */
-                }
-              
-                @keyframes scroll {
-                    from {
-                        transform: translateX(0%);
-                    }
-                    to {
-                        transform: translateX(-50%);
-                    }
-                }
-              </style>
               
               <div id="scrolling-container"> <!--gallery-->
                   <div id="scrolling-images">
@@ -344,6 +317,8 @@
         <p>( ﾉ ﾟｰﾟ)ﾉ</p>
     </footer>
 
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         function calculateAge(birthYear, birthMonth, birthDay) {
             let today = new Date();
@@ -377,8 +352,26 @@
                 return new bootstrap.Tooltip(tooltipTriggerEl);
             });
         });
+
+        const professions = ["an Automation Engineer", "a Graphic Designer"];
+                let professionIndex = 0;
+                const professionElement = document.getElementById("profession");
+        
+                function swapProfession() {
+                    professionElement.style.opacity = 0;  // Start fade-out
+                    setTimeout(() => {
+                        professionElement.textContent = professions[professionIndex];  // Update the profession text
+                        professionElement.style.opacity = 1;  // Start fade-in
+                        professionIndex = (professionIndex + 1) % professions.length;  // Cycle through the array
+                    }, 500); // Duration of fade-out before the text changes
+                }
+        
+                setInterval(swapProfession, 3000); // Swap every 3 seconds
+        
+                // Initial profession setup
+                professionElement.textContent = professions[professionIndex];
     </script>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
 </body>
 </html>
