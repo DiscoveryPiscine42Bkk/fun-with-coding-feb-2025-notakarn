@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Port_CC</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        html {
+    scroll-behavior: smooth;
+    
+}
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+
+}
+.parallax {
+    background-image: url('https://scontent.fbkk29-8.fna.fbcdn.net/v/t39.30808-6/435666247_947225173813318_547314690809865411_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEIgwhuZ4Qz0mCWXTJ83S7kUklm20knlJVSSWbbSSeUlTSpoGYPLn1aHVZqn01U8dL9cx19_EuJabGnd_QIr2VN&_nc_ohc=cVmTLs5W2sEQ7kNvgEEGNdU&_nc_oc=AdiWjPm4HgUS5D06PDK9zMfxLLDv9VvtbbdoBY_XfvIFBtl9vQFfAriLbXZi0MAxLuj0GFJAMF7mcAJziTOTAlcp&_nc_zt=23&_nc_ht=scontent.fbkk29-8.fna&_nc_gid=AEN-wCNXA-L2eYJL79nNyVM&oh=00_AYBJHIEuicJCF3jBlmuA5WaWYJoerEArCJABrid7EYlsaA&oe=67AAC8A2');
+    height: 100vh;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    text-align: center;
+}
+nav {
+    position: fixed;
+    width: 100%;
+    background: black;
+    padding: 20px 0;
+    text-align: center;
+    z-index: 1;
+}
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 18px;
+}
+.container {
+    padding: 50px;
+    text-align: center;
+}
+.pfp{
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+    box-shadow: 0px 0px 0px 3px rgba(255,255,255,0.3);
+    
+}
+#skill{
+    display: grid;
+    
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: "top" 
+    "bottom";
+}
+.top{
+    margin-top: 100px;
+    text-align: center;
+}
+
+.carousel-container {
+    max-width: 600px; 
+    margin: auto; 
+}
+
+.carousel-item img { 
+    width: 100%; 
+    object-fit: cover; 
+}
+#showcase{
+    display: grid;
+    align-items: center;
+    margin-bottom: 100px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "left right";
+    padding: 30px;
+    box-shadow: 0px 0px 28px -3px rgba(0,0,0,0.3);
+    border-radius: 10px;
+}
+.left{
+    grid-area: left;
+}
+.right{
+    grid-area: right;
+}
+.right h3{
+    margin-bottom: 20px;
+}
+.icon-container {
+    margin-top: 50px;
+    margin-bottom: 100px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.album-container {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .album-container h2 {
+    margin-bottom: 30px;
+  }
+  
+  .album {
+    display: inline-block;
+    width: 400px;
+    margin: 10px;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .album img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+    border-radius: 5px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    margin-top: 20px;
+    border: none;
+    background-color: #000000;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 7px !important;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: rgb(100, 100, 100);
+  }
+i{
+    font-size: 30px;
+    color: black;
+}
+#contact{
+    margin-top: 50px;
+}
+#contact h2{
+    margin-bottom: 15px;
+}
+.icon {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    cursor: pointer;
+}
+.icon img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+.tooltip {
+    position: absolute;
+    bottom: 110%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+.icon:hover .tooltip {
+    opacity: 1;
+}
+@media screen and (max-width: 600px) {
+    #showcase{
+        display: grid;
+        align-items: center;
+        grid-template-columns: 1fr ;
+        grid-template-rows: 1fr 1fr ;
+        grid-template-areas: "left" 
+        "right";
+    }
+    .left{
+        grid-area: left;
+    }
+    .right{
+        grid-area: right;
+    }
+  }
+
+
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="#home">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#showcase">Showcase</a>
+        <a href="#project">Project</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    
+    <section id="home" class="parallax">
+        <img class="pfp" src="https://cdn.discordapp.com/attachments/1118970681263132793/1337135313633415238/image.png?ex=67a657cd&is=67a5064d&hm=79549ee3110c35e5d0b806a31f8c9fc0ffe062de2e162111603f807721adbdbe&" alt="Profile Picture">
+        <h1>Chonrawee Charoenritichai</h1>
+        <h4>Painter | Engineer | Web Dev.</h4>
+    </section>
+    
+    <section id="skills" class="container">
+
+        <div class="top">
+            <h3>What can i do?</h3>
+        </div>
+
+
+        <div class="bottom">
+            <div class="icon-container">
+                <div class="icon">
+                    <img src="https://static-00.iconduck.com/assets.00/html-5-icon-224x256-1b5ud2sy.png" alt="HTML5">
+                    <span class="tooltip">HTML5</span>
+                </div>
+                <div class="icon">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJDwBd9LoQzBAZigXXxzQ0kKn6TwyrE0Y7Rg&s" alt="CSS">
+                    <span class="tooltip">CSS</span>
+                </div>
+                <div class="icon">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" alt="JavaScript">
+                    <span class="tooltip">JavaScript</span>
+                </div>
+                <div class="icon">
+                    <img src="https://cdn-icons-png.flaticon.com/512/6132/6132222.png" alt="C+">
+                    <span class="tooltip">C+</span>
+                </div>
+                <div class="icon">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="Python">
+                    <span class="tooltip">Python</span>
+                </div>
+                <div class="icon">
+                    <img src="https://static-00.iconduck.com/assets.00/arduino-ide-icon-512x508-l7r642hd.png" alt="Arduino IDE">
+                    <span class="tooltip">Arduino IDE</span>
+                </div>
+                <div class="icon">
+                    <img src="https://live.staticflickr.com/65535/54312119484_57371072e4_b.jpg" alt="TIA Portal V18">
+                    <span class="tooltip">TIA Portal V18</span>
+                </div>
+                <div class="icon">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Adobe_Photoshop_CC_icon.svg/1051px-Adobe_Photoshop_CC_icon.svg.png" alt="Photoshop">
+                    <span class="tooltip">Photoshop</span>
+                </div>
+                <div class="icon">
+                    <img src="https://www.iamag.co/wp-content/uploads/2016/10/Procreate-Icon.png" alt="Procreate">
+                    <span class="tooltip">Procreate</span>
+                </div>
+                
+            </div>
+        </div>
+
+    </section>
+
+    <section id="showcase" class="container">
+        <div class="left">
+            <div class="carousel-container">
+                <div id="multiItemCarousel" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="https://cdn.discordapp.com/attachments/1118970681263132793/1337281135297957938/flop.png?ex=67a6df9c&is=67a58e1c&hm=9472ada4b1a85faea60f9741e89af3c97e9ba644dea3109200ce8759042089e8&" class="d-block" alt="Image 1">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="https://cdn.discordapp.com/attachments/1118970681263132793/1337281189198958592/milyn.png?ex=67a6dfa8&is=67a58e28&hm=b632edfd3f1e494995f2e9c3f40609502478c136b32d4800c2c20ba69a116fb6&" class="d-block" alt="Image 2">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="https://cdn.discordapp.com/attachments/1118970681263132793/1337281187382693939/meqx.png?ex=67a6dfa8&is=67a58e28&hm=71587692b420d05468e6139f455b69e3735cc34babd1a1600c0b42fc4b3f33c4&" class="d-block" alt="Image 3">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="https://cdn.discordapp.com/attachments/1118970681263132793/1337281188087464047/mercy.png?ex=67a6dfa8&is=67a58e28&hm=a5be08f12bdb65b395548554197424d525d8b3c1979cf9d9dd78b20652b92371&" class="d-block" alt="Image 4">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="https://cdn.discordapp.com/attachments/1118970681263132793/1337281134760955997/B_Mako.png?ex=67a6df9c&is=67a58e1c&hm=ec61cc08565bf6e06d05f75ce568e409ca875ada4bd8de9375d93d4182753fcb&" class="d-block" alt="Image 5">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="https://cdn.discordapp.com/attachments/1118970681263132793/1337281133767036929/Arlyn.png?ex=67a6df9b&is=67a58e1b&hm=3e5f761dabd7a5caa1f7f7c2142a0a2b9163eecc506ee05b0d7442964dac1342&" class="d-block" alt="Image 6">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="https://cdn.discordapp.com/attachments/1118970681263132793/1337281185973407805/lazyCat.png?ex=67a6dfa8&is=67a58e28&hm=753ffd7983497c6ca3eb10b1f0fbaa4d055330bb450ccdfd8fb6d2f7b6c5cad0&" class="d-block" alt="Image 7">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="https://cdn.discordapp.com/attachments/1118970681263132793/1337281190041751552/nubu.png?ex=67a6dfa9&is=67a58e29&hm=1b113fe9d7b809cebe9e2b67f1f2a2abedee9f8523f86733350ad58d70500de3&" class="d-block" alt="Image 8">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="right">
+            <h3>My artwork showcase</h3>
+            <p>these are the parts of artwork that i've done</p>
+            <p>within 4 years of university life</p>
+        </div>
+    </section>
+
+    <section id="project" class="container">
+
+        <div class="album-container">
+            <h2>My project</h2>
+            <div class="album" id="album1">
+              <img src="https://cdn.discordapp.com/attachments/1118970681263132793/1337317620617314376/image.png?ex=67a70196&is=67a5b016&hm=fb981d6934315fc851536ce4e855fbb0e949c83386821952a7e41d141f8b3598&" alt="Image 1">
+              <p>TPA PLC Robot competition</p>
+            </div>
+            <div class="album" id="album2">
+              <img src="https://cdn.discordapp.com/attachments/1118970681263132793/1337317620617314376/image.png?ex=67a70196&is=67a5b016&hm=fb981d6934315fc851536ce4e855fbb0e949c83386821952a7e41d141f8b3598&" alt="Image 2">
+              <p>TPA PLC Robot competition</p>
+            </div>
+            <div class="album" id="album3">
+              <img src="https://cdn.discordapp.com/attachments/1118970681263132793/1337317620617314376/image.png?ex=67a70196&is=67a5b016&hm=fb981d6934315fc851536ce4e855fbb0e949c83386821952a7e41d141f8b3598&" alt="Image 3">
+              <p>TPA PLC Robot competition</p>
+            </div>
+            <div class="album" id="album4">
+              <img src="https://cdn.discordapp.com/attachments/1118970681263132793/1337317620617314376/image.png?ex=67a70196&is=67a5b016&hm=fb981d6934315fc851536ce4e855fbb0e949c83386821952a7e41d141f8b3598&" alt="Image 4">
+              <p>TPA PLC Robot competition</p>
+            </div>
+            <div class="album" id="album5" style="display: none;">
+              <img src="https://cdn.discordapp.com/attachments/1118970681263132793/1337317620617314376/image.png?ex=67a70196&is=67a5b016&hm=fb981d6934315fc851536ce4e855fbb0e949c83386821952a7e41d141f8b3598&" alt="Image 5">
+              <p>TPA PLC Robot competition</p>
+            </div>
+            <div class="album" id="album6" style="display: none;">
+              <img src="https://cdn.discordapp.com/attachments/1118970681263132793/1337317620617314376/image.png?ex=67a70196&is=67a5b016&hm=fb981d6934315fc851536ce4e855fbb0e949c83386821952a7e41d141f8b3598&" alt="Image 6">
+              <p>TPA PLC Robot competition</p>
+            </div>
+            <button id="seeMoreBtn">See More</button>
+          </div>
+
+    </section>
+
+    <section id="contact" class="container">
+        
+        <div>
+        <a href="https://github.com/a2shx"><i class="fa-brands fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/chonrawee-charoenritichai-91b6291a0/"><i class="fa-brands fa-linkedin"></i></a>
+        </div>
+
+        <h2>Contact Me</h2>
+        <p>Email: ch.chonrawee@gmail.com</p>
+        <p>Tel: 089-123-4567</p>
+    </section>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script>document.getElementById('seeMoreBtn').addEventListener('click', function() {
+        const hiddenAlbums = document.querySelectorAll('.album[style="display: none;"]');
+        
+        // Show the hidden albums
+        hiddenAlbums.forEach(function(album) {
+          album.style.display = 'inline-block';
+        });
+      
+        // Hide the "See More" button if no albums are hidden anymore
+        if (document.querySelectorAll('.album[style="display: none;"]').length === 0) {
+          document.getElementById('seeMoreBtn').style.display = 'none';
+        }
+      });</script>
+</body>
+</html>
